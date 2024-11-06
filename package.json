@@ -1,0 +1,45 @@
+{
+    "name": "phenomenon-next-ts-template",
+    "version": "0.2.4",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint:stylelint": "stylelint --cache -q \"**/*.css\"",
+        "lint:prettier": "prettier --check \"**/*.{js,ts,tsx,jsx,json,html,css,cjs}\"",
+        "lint:prettier:fix": "prettier --write \"**/*.{js,ts,tsx,jsx,json,html,css,cjs}\"",
+        "lint": "next lint && npm run lint:stylelint && npm run lint:prettier",
+        "prepare": "husky"
+    },
+    "dependencies": {
+        "clsx": "^2.1.1",
+        "next": "14.2.13",
+        "react": "^18",
+        "react-dom": "^18"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^19.5.0",
+        "@commitlint/config-conventional": "^19.5.0",
+        "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
+        "@svgr/webpack": "^8.1.0",
+        "@types/node": "^20",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "@typescript-eslint/eslint-plugin": "^8.6.0",
+        "@typescript-eslint/parser": "^8.6.0",
+        "autoprefixer": "^10.4.20",
+        "eslint": "^8",
+        "eslint-config-next": "14.2.13",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "eslint-plugin-react": "^7.36.1",
+        "eslint-plugin-react-hooks": "^4.6.2",
+        "husky": "^9.1.6",
+        "postcss": "^8",
+        "prettier": "^3.3.3",
+        "stylelint": "^16.9.0",
+        "stylelint-config-standard": "^36.0.1",
+        "typescript": "^5"
+    }
+}
