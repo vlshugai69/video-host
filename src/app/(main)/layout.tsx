@@ -9,7 +9,7 @@ const MainLayout: React.FC<WithChildren<unknown>> = async ({ children }) => {
 
   return (
     <main className="h-full bg-black-900">
-      <div className="flex gap-8 flex-1">
+      <div className="flex flex-1">
         <SidebarProvider defaultOpen={defaultOpen}>
           <AppSidebar />
         </SidebarProvider>

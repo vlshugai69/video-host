@@ -35,12 +35,23 @@ export const theme = {
       '900': '#181C14'
     },
    'white':{
-    '1000':'#F5F7F8'
+    '1000':'#F5F7F8',
+    '200': '#71717a'
    }
   
   },
    fontFamily: {
       sans: ['var(--font-red-hat-display)', 'sans-serif'],
   },
+  fontSize: {
+    xs: '0.8rem',
+    sm: '0.875rem',
+    md: '1rem',
+    lg: '1.25rem',
+    'xl': '1.563rem',
+    '2xl': '2.25rem',
+    '3xl': '2.441rem',
+    '4xl': '3.052rem',
+  }
 };
 export const plugins = [];
