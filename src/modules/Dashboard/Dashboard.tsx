@@ -3,6 +3,7 @@
 import { memo } from "react";
 import { DollarSign } from "lucide-react";
 import StatisticCard from "@/components/StatisticCard";
+import LineChart from "@/components/LineChart";
 import Typography from "@/ui/typography";
 
 const Dashboard: React.FC = () => {
@@ -37,6 +38,10 @@ const Dashboard: React.FC = () => {
         >
           <Typography affects="2xlarge">124</Typography>
         </StatisticCard>
+      </div>
+      <div className="flex w-full gap-x-4 mt-4">
+        <LineChart />
+        {/* <LineChart /> */}
       </div>
     </div>
   );
