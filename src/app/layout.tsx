@@ -1,13 +1,12 @@
-import localFont from "next/font/local";
+import { Red_Hat_Display } from "next/font/google";
 import type { Metadata } from "next";
 import type { WithChildren } from "@/types";
 import "@/styles/index.css";
-import { SidebarProvider } from "@/ui/sidebar";
-import { AppSidebar } from "@/components/AppSidebar/AppSidebar";
 
-const syneSans = localFont({
-  src: "./fonts/SyneSansVF.ttf",
-  weight: "100 900",
+const redHatDisplay = Red_Hat_Display({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-red-hat-display",
 });
 
 export const metadata: Metadata = {
@@ -18,16 +17,7 @@ export const metadata: Metadata = {
 const RootLayout: React.FC<WithChildren<unknown>> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={`${syneSans.className} antialiased`}>
-        <main className="h-full">
-          <div className="flex gap-8 flex-1">
-            <SidebarProvider>
-              <AppSidebar />
-            </SidebarProvider>
-            {children}
-          </div>
-        </main>
-      </body>
+      <body className={redHatDisplay.variable}>{children}</body>
     </html>
   );
 };

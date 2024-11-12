@@ -8,8 +8,6 @@ export const content = [
   "./src/**/*.{js,ts,jsx,tsx,mdx}",
 ];
 
-const colors = require('tailwindcss/colors')
-
 export const theme = {
   extend: {},
   screens: {
@@ -30,7 +28,7 @@ export const theme = {
         '700': '#0b8a3c',
         '800': '#0f6c34',
         '900': '#0e592d',
-        '950': '#013216',
+        '950': '#002611',
     },
     'black': {
       '1000':'#000000',
@@ -41,9 +39,8 @@ export const theme = {
    }
   
   },
-  fontFamily: {
-    sans: ['Graphik', 'sans-serif'],
-    serif: ['Merriweather', 'serif'],
+   fontFamily: {
+      sans: ['var(--font-red-hat-display)', 'sans-serif'],
   },
 };
 export const plugins = [];

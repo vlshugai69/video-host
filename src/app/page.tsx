@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Home from '@/modules/Home';
+import { redirect } from "next/navigation";
 
 const HomePage: React.FC = () => {
-    return <Home />;
+  redirect("/dashboard");
 };
 
 export default HomePage;
