@@ -5,6 +5,40 @@ import { DollarSign } from "lucide-react";
 import StatisticCard from "@/components/StatisticCard";
 import LineChart from "@/components/LineChart";
 import Typography from "@/ui/typography";
+import RecentResumeList from "@/components/RecentResumeList";
+
+const resumesData = [
+  {
+    id: 1,
+    image: "https://github.com/shadcn.png",
+    name: "Olivia Martin",
+    email: "olivia.martin@email.com",
+  },
+  {
+    id: 2,
+    image: "https://github.com/shadcn.png",
+    name: "Olivia Martin",
+    email: "olivia.martin@email.com",
+  },
+  {
+    id: 3,
+    image: "https://github.com/shadcn.png",
+    name: "Olivia Martin",
+    email: "olivia.martin@email.com",
+  },
+  {
+    id: 4,
+    image: "https://github.com/shadcn.png",
+    name: "Olivia Martin",
+    email: "olivia.martin@email.com",
+  },
+  {
+    id: 5,
+    image: "https://github.com/shadcn.png",
+    name: "Olivia Martin",
+    email: "olivia.martin@email.com",
+  },
+];
 
 const Dashboard: React.FC = () => {
   return (
@@ -41,7 +75,11 @@ const Dashboard: React.FC = () => {
       </div>
       <div className="flex w-full gap-x-4 mt-4">
         <LineChart />
-        {/* <LineChart /> */}
+        <RecentResumeList
+          title="Recent Sales"
+          description="You made 265 sales this month."
+          data={resumesData}
+        />
       </div>
     </div>
   );
