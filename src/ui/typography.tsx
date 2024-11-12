@@ -15,10 +15,11 @@ export const typographyVariants = cva("text-xl", {
     },
     affects: {
       default: "",
-      lead: "text-xl text-muted-foreground",
+      "2xlarge": "text-2xl font-medium",
       large: "text-lg font-semibold",
+      medium: "text-md font-medium leading-none",
       small: "text-sm font-medium leading-none",
-      muted: "text-sm text-muted-foreground",
+      muted: "text-xs font-normal text-white-200",
       removePMargin: "[&:not(:first-child)]:mt-0",
     },
     noWrap: {
