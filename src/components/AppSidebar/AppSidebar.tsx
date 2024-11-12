@@ -1,4 +1,3 @@
-import { Avatar } from "@radix-ui/react-avatar";
 import {
   Calendar,
   LayoutDashboard,
@@ -6,7 +5,6 @@ import {
   Search,
   Settings,
 } from "lucide-react";
-import { AvatarFallback, AvatarImage } from "@/ui/avatar";
 import {
   Sidebar,
   SidebarContent,
@@ -18,7 +16,7 @@ import {
   SidebarMenuItem,
   SidebarTrigger,
 } from "@/ui/sidebar";
-import Typography from "@/ui/typography";
+import UserInfo from "../UserInfo";
 
 const items = [
   {
@@ -56,17 +54,11 @@ const AppSidebar: React.FC = () => {
         <SidebarGroup>
           <SidebarGroupLabel>
             <div className="flex w-full items-center gap-x-4">
-              <Avatar className="max-w-[2rem] max-h-[2rem] rounded-[50%] overflow-hidden">
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>VS</AvatarFallback>
-              </Avatar>
-              <Typography
-                className="group-data-[collapsible=icon]:hidden whitespace-nowrap overflow-hidden overflow-ellipsis"
-                variant="p"
-                affects="small"
-              >
-                Vlad Shuhai
-              </Typography>
+              <UserInfo
+                name="Vlad Shuhai"
+                email="vlshugai@gmail.com"
+                image="https://github.com/shadcn.png"
+              />
             </div>
           </SidebarGroupLabel>
           <SidebarGroupContent>
