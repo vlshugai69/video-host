@@ -49,7 +49,7 @@ const items = [
 const AppSidebar: React.FC = () => {
   return (
     <Sidebar collapsible="icon" variant="floating">
-      <SidebarTrigger className="bg-green-800 absolute right-[0] translate-x-1/2 top-[1rem]" />
+      <SidebarTrigger className="bg-main-800 absolute right-[0] translate-x-1/2 top-[1rem]" />
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>
