@@ -17,26 +17,27 @@ export const theme = {
     xl: '1440px',
   },
   colors: {
-   'green': {
-        '50': '#effef4',
-        '100': '#d9ffe7',
-        '200': '#b5fdcf',
-        '300': '#7cf9ab',
-        '400': '#20e96d',
-        '500': '#13d45e',
-        '600': '#09b04a',
-        '700': '#0b8a3c',
-        '800': '#0f6c34',
-        '900': '#0e592d',
-        '950': '#002611',
+   'main': {
+        '50': 'hsl(var(--main-50))',
+        '100': 'hsl(var(--main-100))',
+        '200': 'hsl(var(--main-200))',
+        '300': 'hsl(var(--main-300))',
+        '400': 'hsl(var(--main-400))',
+        '500': 'hsl(var(--main-500))',
+        '600': 'hsl(var(--main-600))',
+        '700': 'hsl(var(--main-700))',
+        '800': 'hsl(var(--main-800))',
+        '900': 'hsl(var(--main-900))',
+        '950': 'hsl(var(--main-950))',
     },
     'black': {
-      '1000':'#000000',
-      '900': '#181C14'
+      'full': 'hsl(var(--black-full))',
+      '900': 'hsl(var(--black-900))',
+      '800': 'hsl(var(--black-800))'
     },
    'white':{
-    '1000':'#F5F7F8',
-    '200': '#71717a'
+    'full': 'hsl(var(--white-full))',
+    '200': 'hsl(var(--white-200))',
    }
   
   },
