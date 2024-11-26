@@ -9,7 +9,9 @@ export const content = [
 ];
 
 export const theme = {
-  extend: {},
+  extend: {
+  
+  },
   screens: {
     sm: '480px',
     md: '768px',
@@ -30,13 +32,18 @@ export const theme = {
         '900': 'hsl(var(--main-900))',
         '950': 'hsl(var(--main-950))',
     },
+    'primary': 'hsl(var(--primary))',
+    'main-bg': 'hsl(var(--main-bg))',
+    'card': 'hsl(var(--card))',
+    'nav-text': 'hsl(var(--nav-text))',
+    'text': 'hsl(var(--text))',
     'black': {
       'full': 'hsl(var(--black-full))',
-      '900': 'hsl(var(--black-900))',
-      '800': 'hsl(var(--black-800))'
+      '900': 'hsl(var(--main-bg))',
+      '800': 'hsl(var(--card))'
     },
    'white':{
-    'full': 'hsl(var(--white-full))',
+    'full': 'hsl(var(--text))',
     '200': 'hsl(var(--white-200))',
    }
   
@@ -53,6 +60,7 @@ export const theme = {
     '2xl': '2.25rem',
     '3xl': '2.441rem',
     '4xl': '3.052rem',
+    
   }
 };
 export const plugins = [];

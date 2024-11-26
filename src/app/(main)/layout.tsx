@@ -8,7 +8,7 @@ const MainLayout: React.FC<WithChildren<unknown>> = async ({ children }) => {
   const defaultOpen = cookieStore.get("sidebar:state")?.value === "true";
 
   return (
-    <main className="h-full bg-black-900">
+    <main className="h-full bg-main-bg">
       <div className="flex flex-1">
         <SidebarProvider defaultOpen={defaultOpen}>
           <AppSidebar />

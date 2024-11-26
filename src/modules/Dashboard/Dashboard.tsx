@@ -1,6 +1,5 @@
 "use client";
 
-import { memo } from "react";
 import { DollarSign } from "lucide-react";
 import StatisticCard from "@/components/StatisticCard";
 import LineChart from "@/components/LineChart";
@@ -42,7 +41,7 @@ const resumesData = [
 
 const Dashboard: React.FC = () => {
   return (
-    <div className="bg-black-900 w-full px-8 py-8">
+    <div className="bg-main-bg w-full px-8 py-8">
       <div className="flex w-full gap-x-4">
         <StatisticCard
           title="Total CV's"
@@ -85,4 +84,4 @@ const Dashboard: React.FC = () => {
   );
 };
 
-export default memo(Dashboard);
+export default Dashboard;
