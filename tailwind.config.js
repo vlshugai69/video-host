@@ -37,6 +37,7 @@ export const theme = {
     'card': 'hsl(var(--card))',
     'nav-text': 'hsl(var(--nav-text))',
     'text': 'hsl(var(--text))',
+    'error': 'hsl(var(--error))',
     'black': {
       'full': 'hsl(var(--black-full))',
       '900': 'hsl(var(--main-bg))',

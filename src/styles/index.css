@@ -146,6 +146,7 @@ body .focus-primary-child {
     --text: 0 0% 100%;
     --nav-text: 0 0% 100%;
     --white-200: 240 3% 46%;
+    --error: 0 61% 50%;
   }
   .dark {
     --chart-1: 113 88% 60%;
@@ -166,5 +167,6 @@ body .focus-primary-child {
     --card: 125 36% 10%;
     --text: 204 10% 96%;
     --white-200: 240 3% 46%;
+    --error: 0 61% 50%;
   }
 }
