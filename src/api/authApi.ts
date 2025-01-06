@@ -9,12 +9,10 @@ export type LoginRequestData = {
 
 export type LoginResponseData = {
   data: {
-    accessToken: string;
-    expiresIn: string;
-    idToken: string;
-    refreshToken: string;
-    tokenType: string;
-    userUuid: string;
+    userId: string;
+    email: string;
+    access_token: string;
+    refresh_token: string;
   };
 };
 
