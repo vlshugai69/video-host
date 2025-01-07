@@ -2,7 +2,6 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import {
   Form,
   FormControl,
@@ -14,6 +13,15 @@ import {
 import { Input } from "@/ui/input";
 import { Button } from "@/ui/button";
 import { LoginForm, loginSchema } from "./schemas";
+import { useLoginMutation } from "@/api/hooks/useAuthApi";
+import {
+  ACCESS_TOKEN_KEY,
+  HTTP_ERROR,
+  REFRESH_TOKEN_KEY,
+  USER_UUID_KEY,
+} from "@/constants";
+import { GlobalFetchErrorResponse } from "@/types";
+import { toast } from "sonner";
 
 const Login: React.FC = () => {
   const form = useForm<LoginForm>({
@@ -24,14 +32,44 @@ const Login: React.FC = () => {
     },
   });
 
-  function onSubmit(values: LoginForm) {
-    console.log(values);
-  }
+  const { mutate: mutateLogin } = useLoginMutation();
+
+  const loginHandler = form.handleSubmit((data) => {
+    mutateLogin(data, {
+      onSuccess(respData) {
+        const { access_token, refresh_token, userId } = respData.data;
+        localStorage.setItem(ACCESS_TOKEN_KEY, access_token);
+        localStorage.setItem(REFRESH_TOKEN_KEY, refresh_token);
+        localStorage.setItem(USER_UUID_KEY, userId);
+      },
+      async onError(error) {
+        const { response } = error;
+
+        if (response?.status === 429) {
+          return;
+        }
+
+        if (error.name === HTTP_ERROR) {
+          // TODO: should add translation for error messages
+          const errorData: GlobalFetchErrorResponse = await response.json();
+
+          toast("Error", {
+            description: errorData.message,
+          });
+        } else {
+          toast("Error", {
+            description: "error message",
+          });
+        }
+      },
+    });
+  });
+
   return (
     <div className="flex justify-center items-center w-full">
       <Form {...form}>
         <form
-          onSubmit={form.handleSubmit(onSubmit)}
+          onSubmit={loginHandler}
           className="space-y-8 p-6 w-full rounded-[0.75rem] max-w-[25rem] bg-card"
         >
           <FormField

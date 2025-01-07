@@ -23,3 +23,9 @@ export type OptionsWithTypedJson<TData> = Options & {
 export type OptionsWithTypedBody<TData> = Options & {
   body: TData;
 };
+
+export type GlobalFetchErrorResponse = {
+  code: number;
+  message: string;
+  key?: string;
+};

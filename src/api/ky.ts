@@ -6,7 +6,7 @@ import {
 } from "./kyHooks";
 
 export const http = ky.create({
-  prefixUrl: process.env.VITE_API_URL,
+  prefixUrl: "http://localhost:8001",
   headers: {
     "Accept-Version": "1",
   },
