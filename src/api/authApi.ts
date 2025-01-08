@@ -8,12 +8,10 @@ export type LoginRequestData = {
 };
 
 export type LoginResponseData = {
-  data: {
-    userId: string;
-    email: string;
-    access_token: string;
-    refresh_token: string;
-  };
+  userId: string;
+  email: string;
+  access_token: string;
+  refresh_token: string;
 };
 
 export const login = async (

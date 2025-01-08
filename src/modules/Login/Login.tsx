@@ -22,8 +22,12 @@ import {
 } from "@/constants";
 import { GlobalFetchErrorResponse } from "@/types";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import PasswordInput from "@/components/PasswordInput";
 
 const Login: React.FC = () => {
+  const router = useRouter();
+
   const form = useForm<LoginForm>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -37,10 +41,14 @@ const Login: React.FC = () => {
   const loginHandler = form.handleSubmit((data) => {
     mutateLogin(data, {
       onSuccess(respData) {
-        const { access_token, refresh_token, userId } = respData.data;
+        console.log(respData);
+        const { access_token, refresh_token, userId } = respData;
+
         localStorage.setItem(ACCESS_TOKEN_KEY, access_token);
         localStorage.setItem(REFRESH_TOKEN_KEY, refresh_token);
         localStorage.setItem(USER_UUID_KEY, userId);
+
+        router.push("/dashboard");
       },
       async onError(error) {
         const { response } = error;
@@ -79,7 +87,7 @@ const Login: React.FC = () => {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="john@gmail.com" {...field} />
+                  <Input placeholder="john@gmail.com" type="text" {...field} />
                 </FormControl>
                 <FormMessage className="text-error" />
               </FormItem>
@@ -92,7 +100,7 @@ const Login: React.FC = () => {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="Password" {...field} />
+                  <PasswordInput {...field} />
                 </FormControl>
                 <FormMessage className="text-error" />
               </FormItem>
